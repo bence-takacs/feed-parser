@@ -5,7 +5,7 @@ setup(
     version='0.9.2',
     scripts=['__init__.py'],
     url='https://github.com/pypa/sampleproject',
-    author='Bence Takács',
+    author='Bence Takacs',
     author_email='takacs.bence@gmail.com',
     install_requires=[
         'requests', 'beautifulsoup4', 'logging'
