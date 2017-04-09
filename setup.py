@@ -1,9 +1,12 @@
 from setuptools import setup
 
 setup(
-    name='feed-parser',
-    version='0.9.1',
-    scripts=['fp.py'],
+    name='fp',
+    version='0.9.2',
+    scripts=['__init__.py'],
+    url='https://github.com/pypa/sampleproject',
+    author='Bence Takács',
+    author_email='takacs.bence@gmail.com',
     install_requires=[
         'requests', 'beautifulsoup4', 'logging'
     ]
