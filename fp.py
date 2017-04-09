@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import logging
 
 
-def get_text(str):
+def extract_text_from_path(str):
     if str.startswith("http://") or str.startswith("https://"):
         return get_text_from_url(str)
     else:
@@ -62,5 +62,5 @@ log = logging.getLogger(__name__)
 output = sys.argv[2] if len(sys.argv) > 2 else "./output.json"
 input = sys.argv[1] if len(sys.argv) > 1 else "./input.html"
 
-get_feed_links(input, get_text(input), output)
+get_feed_links(input, extract_text_from_path(input), output)
 
