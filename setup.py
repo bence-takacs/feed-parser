@@ -4,7 +4,7 @@ setup(
     name='fp',
     version='0.9.2',
     scripts=['__init__.py'],
-    url='https://github.com/pypa/sampleproject',
+    url='https://github.com/bence-takacs/feed-parser',
     author='Bence Takacs',
     author_email='takacs.bence@gmail.com',
     install_requires=[
