@@ -15,9 +15,18 @@ class FeedParser:
         result into *output*."""
         self.infile = infile or "./input.html"
         self.outfile = outfile or "./output.json"
-        logging.basicConfig(format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s", filename='fp.log',
+        logging.basicConfig(format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
                             level=logging.DEBUG)
         self.log = logging.getLogger(__name__)
+
+    def GET(self):
+        return "No site defined. Please use /feeds/(.*) to define the site. E.g: /feeds/index.hu"
+
+    def GET(self, site_link):
+        site_link = site_link if site_link.startswith("http") else "http://"+site_link
+        fp = FeedParser(site_link)
+        self.log.debug("SITE [" + site_link + "] ")
+        return fp.parse()
 
     def extract_text_from_path(self):
         if self.infile.startswith("http://") or self.infile.startswith("https://"):
@@ -59,11 +68,7 @@ class FeedParser:
                 atom_links.append(str(link_atom.get('href')))
             data = {'rss': rss_links,
                     'atom': atom_links}
-            self.log.debug("FEEDS [" + self.infile + "] " + json.dumps(data, sort_keys=True, indent = 4))
+            out = json.dumps(data, sort_keys=True, indent = 4)
+            self.log.debug("FEEDS [" + self.infile + "] " + out)
+            return out
 
-            with open(self.outfile, 'w') as outfile:
-                try:
-                    json.dump(data, outfile, sort_keys=True, indent = 4)
-                except Exception as e:
-                    self.log.error('Failed to open file: ' + outfile.name, exc_info=True)
-            return rss_links
