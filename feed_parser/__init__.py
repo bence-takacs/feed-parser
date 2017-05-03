@@ -1,5 +1,17 @@
 from FeedParser import FeedParser
 import sys
+import web
+
+
+def ws():
+    urls = (
+        '/', 'FeedParser',
+        '/feeds/(.*)', 'FeedParser'
+    )
+
+    app = web.application(urls, globals())
+    #web.httpserver.runsimple(app.wsgifunc(), ("0.0.0.0", 8080))
+    app.run()
 
 
 def cmd_line():
@@ -12,4 +24,5 @@ def cmd_line():
 
 if __name__ == "__main__":
     cmd_line()
+
 

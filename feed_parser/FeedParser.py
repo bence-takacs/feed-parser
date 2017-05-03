@@ -20,7 +20,7 @@ class FeedParser:
         self.log = logging.getLogger(__name__)
 
     def GET(self):
-        return "No site defined. Please use /feeds/(.*) to define the site. E.g: /feeds/index.hu"
+        return "No site defined. Please use /feeds/{{sitename}} to define the site. E.g: /feeds/index.hu"
 
     def GET(self, site_link):
         site_link = site_link if site_link.startswith("http") else "http://"+site_link
