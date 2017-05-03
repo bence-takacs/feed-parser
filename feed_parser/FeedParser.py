@@ -15,7 +15,7 @@ class FeedParser:
         result into *output*."""
         self.infile = infile or "./input.html"
         self.outfile = outfile or "./output.json"
-        logging.basicConfig(format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
+        logging.basicConfig(format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s", filename='fp.log',
                             level=logging.DEBUG)
         self.log = logging.getLogger(__name__)
 
