@@ -1,1 +1,1 @@
-import feed_parser
+import feed_parser.FeedParser
