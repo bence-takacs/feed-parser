@@ -1,10 +1,10 @@
 Metadata-Version: 1.0
 Name: feed-parser
-Version: 0.9.1
+Version: 0.9.2
 Summary: UNKNOWN
-Home-page: UNKNOWN
-Author: UNKNOWN
-Author-email: UNKNOWN
+Home-page: https://github.com/bence-takacs/feed-parser
+Author: Bence Takacs
+Author-email: takacs.bence@gmail.com
 License: UNKNOWN
 Description: UNKNOWN
 Platform: UNKNOWN

@@ -1,4 +1,4 @@
-from fp import FeedParser
+from feed_parser import FeedParser
 
 
 def test_end_to_end():

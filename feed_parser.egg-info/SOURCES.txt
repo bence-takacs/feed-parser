@@ -1,4 +1,3 @@
-fp.py
 setup.py
 feed_parser.egg-info/PKG-INFO
 feed_parser.egg-info/SOURCES.txt
