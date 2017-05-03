@@ -1,4 +1,5 @@
 setup.py
+feed_parser/__init__.py
 feed_parser.egg-info/PKG-INFO
 feed_parser.egg-info/SOURCES.txt
 feed_parser.egg-info/dependency_links.txt
