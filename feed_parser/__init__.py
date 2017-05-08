@@ -1,18 +1,7 @@
-from FeedParser import FeedParser
 import sys
-import web
 
 
-def ws():
-    urls = (
-        '/', 'FeedParser',
-        '/feeds/(.*)', 'FeedParser'
-    )
-
-    app = web.application(urls, globals())
-    web.httpserver.runsimple(app.wsgifunc(), ("0.0.0.0", 8080))
-    #app.run()
-
+from fp import FeedParser
 
 def cmd_line():
     output = sys.argv[2] if len(sys.argv) > 2 else None
